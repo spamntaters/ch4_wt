@@ -8,7 +8,11 @@
     = csrf_meta_tags
 
   %body
-  #Added for consistency with appearance in the screencasts 
+    //Added for consistency with appearance in the screencasts 
     %h1.title RottenPotatoes!
     #main
+    - if flash[:notice]
+      #notice.message= flash[:notice]
+    - elsif flash[:warning]
+      #warning.message= flash[:warning]
 = yield
