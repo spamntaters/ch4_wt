@@ -6,6 +6,9 @@ class MoviesController < ApplicationController
     id = params[:id]
     @movie = Movie.find(id)
   end
+  def new
+    @movie = Movie.new
+  end
   private
   def movie_params
     params.require(:movie).permit(:title, :rating, :description, :release_date)
